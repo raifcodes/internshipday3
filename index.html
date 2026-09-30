@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAIF — Frontend Web Developer Intern JavaScript interaction project">
+  <title>RAIF — Interactive Web Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="RAIF home">
+        <span class="brand-mark">R</span>
+        <span>RAIF</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#about">About</a>
+        <button class="theme-button" id="themeButton" type="button" aria-label="Toggle appearance">
+          <span id="themeIcon">☼</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <span class="eyebrow"><span class="status-dot"></span> FRONTEND WEB DEVELOPER INTERN</span>
+        <h1>Build interactions<br><span>that feel alive.</span></h1>
+        <p class="hero-text">
+          A modern JavaScript-powered interface by <strong>RAIF</strong>, combining DOM manipulation,
+          event handling, validation, dynamic content and subtle motion in a premium glassmorphism UI.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">Explore Demo <span>↗</span></a>
+          <a class="button secondary" href="#about">View Approach</a>
+        </div>
+
+        <div class="mini-stats">
+          <div><strong>03</strong><span>Core files</span></div>
+          <div><strong>06+</strong><span>Interactions</span></div>
+          <div><strong>100%</strong><span>Vanilla JS</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card glass reveal delay-one" aria-label="Interactive JavaScript preview">
+        <div class="window-bar">
+          <span class="window-dot red"></span>
+          <span class="window-dot yellow"></span>
+          <span class="window-dot green"></span>
+          <span class="window-title">raif.js</span>
+        </div>
+        <div class="code-preview">
+          <span class="line"><i>01</i><b>const</b> experience = {</span>
+          <span class="line indent"><i>02</i> name: <em>'RAIF'</em>,</span>
+          <span class="line indent"><i>03</i> mode: <em>'interactive'</em>,</span>
+          <span class="line indent"><i>04</i> stack: [<em>'HTML'</em>, <em>'CSS'</em>, <em>'JS'</em>]</span>
+          <span class="line"><i>05</i>};</span>
+          <span class="line blank"><i>06</i></span>
+          <span class="line"><i>07</i>experience.<strong>enhance</strong>(userExperience);</span>
+          <span class="cursor"></span>
+        </div>
+        <div class="preview-footer">
+          <span><span class="pulse"></span> JavaScript connected</span>
+          <span id="liveClock">--:--:--</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="features">
+      <div class="section-heading reveal">
+        <span class="section-label">01 / FEATURES</span>
+        <h2>Small interactions.<br><span>Big difference.</span></h2>
+        <p>Every interaction is implemented with plain JavaScript and connected directly to the DOM.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card glass reveal">
+          <div class="feature-icon">⌘</div>
+          <h3>Smart Navigation</h3>
+          <p>Responsive mobile navigation opens and closes with accessible event handling.</p>
+          <span class="tag">EVENTS</span>
+        </article>
+
+        <article class="feature-card glass reveal delay-one">
+          <div class="feature-icon">✦</div>
+          <h3>Dynamic UI</h3>
+          <p>Content, counters, notifications and interface states are updated without page reloads.</p>
+          <span class="tag">DOM</span>
+        </article>
+
+        <article class="feature-card glass reveal delay-two">
+          <div class="feature-icon">✓</div>
+          <h3>Form Validation</h3>
+          <p>Client-side validation gives immediate feedback and prevents invalid submissions.</p>
+          <span class="tag">VALIDATION</span>
+        </article>
+
+        <article class="feature-card glass reveal">
+          <div class="feature-icon">◐</div>
+          <h3>Theme Control</h3>
+          <p>Switch between premium dark and light appearances while preserving the selected state.</p>
+          <span class="tag">STATE</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="demo">
+      <div class="demo-shell glass reveal">
+        <div class="demo-intro">
+          <span class="section-label">02 / LIVE DEMO</span>
+          <h2>Try the interactions.</h2>
+          <p>Use the controls below to see JavaScript manipulate the page in real time.</p>
+
+          <div class="counter-panel">
+            <div>
+              <span class="small-label">INTERACTION COUNTER</span>
+              <strong id="counterValue">0</strong>
+            </div>
+            <button class="icon-button" id="counterButton" type="button" aria-label="Increase counter">＋</button>
+          </div>
+
+          <button class="button secondary full" id="notifyButton" type="button">Trigger notification</button>
+        </div>
+
+        <div class="form-panel">
+          <span class="small-label">CONTACT INTERACTION</span>
+          <h3>Send a quick message</h3>
+          <form id="contactForm" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name">
+            <small class="error" id="nameError"></small>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+            <small class="error" id="emailError"></small>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write something..."></textarea>
+            <small class="error" id="messageError"></small>
+
+            <button class="button primary full" type="submit">Submit interaction <span>→</span></button>
+          </form>
+          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+            ✓ Message validated successfully.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="about-grid">
+        <div class="section-heading reveal">
+          <span class="section-label">03 / IMPLEMENTATION</span>
+          <h2>Clean structure.<br><span>Clear intent.</span></h2>
+          <p>
+            The project keeps responsibilities separated: HTML defines structure, CSS controls presentation,
+            and JavaScript owns behavior and state.
+          </p>
+        </div>
+
+        <div class="architecture glass reveal delay-one">
+          <div class="architecture-row">
+            <span class="arch-number">01</span>
+            <div><strong>index.html</strong><small>Semantic structure & accessibility</small></div>
+          </div>
+          <div class="connector"></div>
+          <div class="architecture-row">
+            <span class="arch-number">02</span>
+            <div><strong>style.css</strong><small>Glass UI, responsive layout & motion</small></div>
+          </div>
+          <div class="connector"></div>
+          <div class="architecture-row">
+            <span class="arch-number">03</span>
+            <div><strong>script.js</strong><small>Events, DOM updates & validation</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Done.</span>
+  </div>
+
+  <footer class="footer container">
+    <span>© 2026 RAIF</span>
+    <span>Interactive JavaScript Web Experience</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
